@@ -51,3 +51,4 @@ yarn build
 mkdir .github/workflows
 ```
 #### Prepare deploy.yml
+In github repo: Settings->Actions(General)-> set "Workflow permissions" as rw
