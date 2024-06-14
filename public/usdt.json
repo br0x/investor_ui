@@ -1,0 +1,7 @@
+{
+  "name": "Test Tether USD",
+  "symbol": "USD₮T",
+  "decimals": "6",
+  "image": "https://br0x.github.io/investor_ui/logoUSDT.png",
+  "description": "Tether Token for Tether USD (test)"
+}
