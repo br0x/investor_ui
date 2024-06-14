@@ -8,8 +8,8 @@ import { useTonConnect } from "./useTonConnect";
 import { JettonWallet } from "../contracts/JettonWallet";
 import { Investor } from "../contracts/Investor";
 
-const usdtMinterAddr = "kQBSvCUwq3PNYUbPU8AVz9hwm2DZILPZWicL3YPA-zFyKO7D";
-const investorAddr = "kQD8uedx5GWGS_tjZw8WJbErNEbhA2KFgiFgwn6LrvfAJuWV";
+const usdtMinterAddr = "kQBPuk_vxUyvSgFjaA_Auu0mM8RphDNDjHbBuryHiKC_mdQW";
+const investorAddr = "kQBniIQERjnbFht8z2afJzNVy2HnDK5rktjgTSifpWrUoYCg";
 
 export function useContracts() {
 
