@@ -11,5 +11,5 @@ export default defineConfig({
       globals: { Buffer: true },
     }),
   ],
-  base: "/",
+  base: "/investor_ui/",
 })
