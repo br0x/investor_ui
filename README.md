@@ -51,4 +51,9 @@ yarn build
 mkdir .github/workflows
 ```
 #### Prepare deploy.yml
-In github repo: Settings->Actions(General)-> set "Workflow permissions" as rw
+In github repo: Settings->Actions(General)-> set "Workflow permissions" as rw (Save)
+```
+git commit -m "Workflow"
+git push -u origin master
+```
+In github repo: Settings->Pages-> Branch gh-pages (Save)
