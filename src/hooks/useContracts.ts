@@ -41,8 +41,8 @@ export function useContracts() {
     }>();
 
     const [beneficiaryWalletData, setBeneficiaryWalletData] = useState<null | {
-        bene_usdt_balance: string;
-        bene_usdt_jw_address: string;
+        bene_usdt_balance: string | undefined;
+        bene_usdt_jw_address: string | undefined;
     }>();
 
     const { sender, connected } = useTonConnect();
@@ -83,11 +83,15 @@ export function useContracts() {
         return client.open(j_contract) as OpenedContract<JettonWallet>;
     }, [connected, stUsdtWalletAddress]);
     
-    const beneficiaryUsdtWalletContract = useAsyncInitialize(async () => {
+    const beneficiaryUsdtWalletAddress = useAsyncInitialize(async () => {
         if (!client || !investor || !usdtMinter) return;
         const beneAddress = (await investor?.getStorageData()).beneficiaryAddress;
-        const beneUsdtWalletAddress = await usdtMinter?.getWalletAddress(beneAddress);
-        const j_contract = new JettonWallet(beneUsdtWalletAddress!);
+        return await usdtMinter?.getWalletAddress(beneAddress);
+    }, [investor, usdtMinter]);
+    
+    const beneficiaryUsdtWalletContract = useAsyncInitialize(async () => {
+        if (!client || !investor || !usdtMinter) return;
+        const j_contract = new JettonWallet(beneficiaryUsdtWalletAddress!);
         return client.open(j_contract) as OpenedContract<JettonWallet>;
     }, [investor, usdtMinter]);
     
@@ -118,11 +122,9 @@ export function useContracts() {
                 beneficiary_address: beneficiaryAddress.toString({bounceable: false, testOnly: true}),
             });
 
-            if (!beneficiaryUsdtWalletContract) return;
-            const beneUsdtWalletBalance = (await beneficiaryUsdtWalletContract.getWalletData()).balance;
             setBeneficiaryWalletData({
-                bene_usdt_balance: fromUnits(beneUsdtWalletBalance, 6),
-                bene_usdt_jw_address: beneficiaryUsdtWalletContract.address.toString(),
+                bene_usdt_balance: beneficiaryUsdtWalletContract ? fromUnits((await beneficiaryUsdtWalletContract.getWalletData()).balance, 6) : undefined,
+                bene_usdt_jw_address: beneficiaryUsdtWalletAddress?.toString(),
             });
 
             setUsdtWalletData({
