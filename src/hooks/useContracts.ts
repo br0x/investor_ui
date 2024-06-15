@@ -9,7 +9,7 @@ import { JettonWallet } from "../contracts/JettonWallet";
 import { Investor } from "../contracts/Investor";
 
 const usdtMinterAddr = "kQBPuk_vxUyvSgFjaA_Auu0mM8RphDNDjHbBuryHiKC_mdQW";
-const investorAddr = "kQBniIQERjnbFht8z2afJzNVy2HnDK5rktjgTSifpWrUoYCg";
+const investorAddr = "kQBq9R7F85ZUNc8LUzohPjdiUkY-SlCaQECzmYGeUqU-zk6t";
 
 export function useContracts() {
 
