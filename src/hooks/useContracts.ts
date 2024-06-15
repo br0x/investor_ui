@@ -90,10 +90,10 @@ export function useContracts() {
     }, [investor, usdtMinter]);
     
     const beneficiaryUsdtWalletContract = useAsyncInitialize(async () => {
-        if (!client || !investor || !usdtMinter) return;
+        if (!client || !beneficiaryUsdtWalletAddress) return undefined;
         const j_contract = new JettonWallet(beneficiaryUsdtWalletAddress!);
         return client.open(j_contract) as OpenedContract<JettonWallet>;
-    }, [investor, usdtMinter]);
+    }, [beneficiaryUsdtWalletAddress]);
     
     useEffect(() => {
         async function getValues() {
