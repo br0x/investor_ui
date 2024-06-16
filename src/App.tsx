@@ -6,9 +6,9 @@ import { useTonConnect } from "./hooks/useTonConnect";
 function App() {
   const {
     // usdt minter
-    usdt_minter_contract_address,
-    total_supply, 
-    admin_address,
+    // usdt_minter_contract_address,
+    // total_supply, 
+    // admin_address,
     // investor
     investor_contract_address,
     total_stusdt_supply, 
@@ -40,14 +40,14 @@ function App() {
 
       <div>
 
-        <div className='Card'>
+        {/* <div className='Card'>
           <b>USDT Minter Admin Address</b>
           <div className='Hint'>{admin_address}</div>
           <b>USDT Minter contract Address</b>
           <div className='Hint'>{usdt_minter_contract_address}</div>
           <b>Total USDT issued</b>
           <div className='Hint'>{total_supply ?? "0"}</div>
-        </div>
+        </div> */}
 
         <div className='Card'>
           <b>Investment Contract Admin Address</b>

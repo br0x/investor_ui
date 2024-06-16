@@ -15,10 +15,10 @@ export function useContracts() {
 
     const client = useTonClient();
 
-    const [usdtMinterData, setUsdtMinterData] = useState<null | {
-        total_supply: string;
-        admin_address: string;
-    }>();
+    // const [usdtMinterData, setUsdtMinterData] = useState<null | {
+    //     total_supply: string;
+    //     admin_address: string;
+    // }>();
 
     const [investorData, setInvestorData] = useState<null | {
         total_stusdt_supply: string;
@@ -97,12 +97,12 @@ export function useContracts() {
     
     useEffect(() => {
         async function getValues() {
-            if (!usdtMinter) return;        
-            const { totalSupply, adminAddress } = await usdtMinter.getJettonData();
-            setUsdtMinterData({
-                total_supply: fromUnits(totalSupply, 6),
-                admin_address: adminAddress.toString({bounceable: false, testOnly: true}),
-            });
+            // if (!usdtMinter) return;        
+            // const { totalSupply, adminAddress } = await usdtMinter.getJettonData();
+            // setUsdtMinterData({
+            //     total_supply: fromUnits(totalSupply, 6),
+            //     admin_address: adminAddress.toString({bounceable: false, testOnly: true}),
+            // });
 
             if (!investor) return;            
             const { 
@@ -142,11 +142,11 @@ export function useContracts() {
             getValues();
         }
         getValues();
-    }, [usdtMinter, investor, beneficiaryUsdtWalletContract, usdtWalletAddress, stUsdtWalletAddress]);
+    }, [/*usdtMinter,*/ investor, beneficiaryUsdtWalletContract, usdtWalletAddress, stUsdtWalletAddress]);
 
     return {
-        usdt_minter_contract_address: usdtMinter?.address.toString({bounceable: true, testOnly: true}),
-        ...usdtMinterData,
+        // usdt_minter_contract_address: usdtMinter?.address.toString({bounceable: true, testOnly: true}),
+        // ...usdtMinterData,
         investor_contract_address: investor?.address.toString({bounceable: true, testOnly: true}),
         ...investorData,
         sendTransfer: (queryId: number, amount: string) => {
