@@ -30,14 +30,14 @@ export function useContracts() {
     }>();
 
     const [usdtWalletData, setUsdtWalletData] = useState<null | {
-        owner: string | undefined;
+        // owner: string | undefined;
         usdt_jetton_balance: string | undefined;
-        usdt_jw_address: string | undefined;
+        // usdt_jw_address: string | undefined;
     }>();
 
     const [stUsdtWalletData, setStUsdtWalletData] = useState<null | {
         stusdt_jetton_balance: string | undefined;
-        stusdt_jw_address: string | undefined;
+        // stusdt_jw_address: string | undefined;
     }>();
 
     const [beneficiaryWalletData, setBeneficiaryWalletData] = useState<null | {
@@ -128,21 +128,21 @@ export function useContracts() {
             });
 
             setUsdtWalletData({
-                owner: sender.address?.toString(),
+                // owner: sender.address?.toString(),
                 usdt_jetton_balance: usdtWalletContract ? fromUnits((await usdtWalletContract.getWalletData()).balance, 6) : undefined,
-                usdt_jw_address: usdtWalletAddress?.toString(),
+                // usdt_jw_address: usdtWalletAddress?.toString(),
             });
 
             setStUsdtWalletData({
                 stusdt_jetton_balance: stUsdtWalletContract ? fromUnits((await stUsdtWalletContract.getWalletData()).balance, 6) : undefined,
-                stusdt_jw_address: stUsdtWalletAddress?.toString(),
+                // stusdt_jw_address: stUsdtWalletAddress?.toString(),
             });
 
             await sleep(10000); // sleep 10 seconds and poll value again
             getValues();
         }
         getValues();
-    }, [/*usdtMinter,*/ investor, beneficiaryUsdtWalletContract, usdtWalletAddress, stUsdtWalletAddress]);
+    }, [/*usdtMinter,*/ investor, beneficiaryUsdtWalletContract, usdtWalletContract, stUsdtWalletContract]);
 
     return {
         // usdt_minter_contract_address: usdtMinter?.address.toString({bounceable: true, testOnly: true}),

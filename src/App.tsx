@@ -22,12 +22,12 @@ function App() {
     bene_usdt_balance,
     bene_usdt_jw_address,
     // usdt wallet
-    owner,
+    // owner,
     usdt_jetton_balance,
-    usdt_jw_address,
+    // usdt_jw_address,
     // stUSDT wallet
     stusdt_jetton_balance,
-    stusdt_jw_address,
+    // stusdt_jw_address,
   } = useContracts();
 
   const { connected } = useTonConnect()
@@ -72,15 +72,9 @@ function App() {
 
         {connected && (
           <div className='Card'>
-            <b>User Address</b>
-            <div className='Hint'>{owner}</div>
-            <b>USDT Wallet Address</b>
-            <div className='Hint'>{usdt_jw_address}</div>
-            <b>USDT Balance</b>
+            <b>User USDT Balance</b>
             <div className='Hint'>{usdt_jetton_balance ?? "0"}</div>
-            <b>stUSDT Wallet Address</b>
-            <div className='Hint'>{stusdt_jw_address}</div>
-            <b>stUSDT Balance</b>
+            <b>User stUSDT Balance</b>
             <div className='Hint'>{stusdt_jetton_balance ?? "0"}</div>
           </div>
         )}
