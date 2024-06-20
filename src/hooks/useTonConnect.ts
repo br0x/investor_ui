@@ -54,6 +54,6 @@ export function useTonConnect(): {
 
       connected: !!wallet?.account.address,  
       wallet: wallet?.account.address ?? null,
-      network: wallet?.account.chain ?? null 
+      network: wallet?.account.chain ?? null
   }
 }

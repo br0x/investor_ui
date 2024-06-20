@@ -34,7 +34,7 @@ function App() {
   
   return (
     <div>
-      <div>
+      <div id='connect'>
         <TonConnectButton />
       </div>
 

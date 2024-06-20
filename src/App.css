@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+#connect{
+  position:absolute;
+  top:0;
+  right:0;
+  margin-right: 10px;
+  margin-top: 10px;
+}
