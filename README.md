@@ -57,3 +57,6 @@ git commit -m "Workflow"
 git push -u origin master
 ```
 In github repo: Settings->Pages-> Branch gh-pages (Save)
+#### After cloning repo:
+yarn install
+
