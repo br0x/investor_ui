@@ -1,6 +1,6 @@
 {
-  "name": "Quotes Memorial",
+  "name": "Quote.Memorial",
   "symbol": "QMEMO",
-  "description": "Immortalize your wisdom here - https://quote.memorial/",
-  "image": "https://raw.githubusercontent.com/br0x/investor_ui/refs/heads/gh-pages/quote.svg"
+  "description": "Immortalize your wisdom here - https://quote.memorial",
+  "image": "https://br0x.github.io/investor_ui/quote.svg"
 }
